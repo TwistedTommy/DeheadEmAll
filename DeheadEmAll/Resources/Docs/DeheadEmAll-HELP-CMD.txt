@@ -1,0 +1,45 @@
+------------------------------------------------------------------
+DeheadEmAll - Help - CMD version 20220308
+Copyright (c) 2016-2022 DeheadEmAll - All Rights Reserved
+------------------------------------------------------------------
+
+Usage:
+	DeheadEmAll-CLI.exe [-command] [option:]
+	Options that contain spaces must be enclosed in quotations
+	Options may be specified in any order
+	Only one command may be be used
+	If no command is passed then -deheadall will be used
+
+------------------------------------------------------------------
+
+Deheader All ROMs Example:
+	DeheadEmAll-CLI.exe -deheadall
+
+Deheader All Selected ROMs Example:
+	DeheadEmAll-CLI.exe -allselected
+
+------------------------------------------------------------------
+
+WARNING:
+	Using invalid options values may cause this app to crash!
+
+------------------------------------------------------------------
+
+Standard Commands:
+	-deheadall		Deheader all FDS/NES/A7800/Lynx ROMs
+	-deheadallselected	Deheader all selected ROMs in options file
+	-deheadfds	Deheader all FDS (.fds) ROMs
+	-deheadnes	Deheader all NES (.nes) ROMs
+	-deheada7800	Deheader all A7800 (.a78) ROMs
+	-deheadlynx	Deheader all Lynx (.lnx) ROMs
+	-saveoptions	Save a new default options file
+	-help		Print the help
+	-license	Print the license
+	-version	Print the version
+
+------------------------------------------------------------------
+
+Standard Options:
+	RD:		Path to the ROMs directory
+	RE:		Path to the deheadered ROMs directory
+	LF:		Path to the log file

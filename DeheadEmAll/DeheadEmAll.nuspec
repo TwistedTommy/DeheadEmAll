@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+	<metadata>
+		<id>DeheadEmAll</id>
+		<version>0.0.0</version>
+		<title>DeheadEmAll</title>
+		<authors>DeheadEmAll</authors>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<license type="file">DeheadEmAll-LICENSE.txt</license>
+		<icon>icon.png</icon>
+		<projectUrl>https://github.com/TwistedTommy/DeheadEmAll</projectUrl>
+		<description>The Original Automated ROM Deheaderer</description>
+		<releaseNotes>Use from anywhere in your application to Deheader ROMs</releaseNotes>
+		<copyright>Copyright (c) 2016-2022 DeheadEmAll - All Rights Reserved</copyright>
+		<tags>DeheadEmAll Deheader ROMs Automated ROM Deheaderer Dehead WindowsForms WinForms Windows Forms Application Console</tags>
+		<repository type="git" url="https://github.com/TwistedTommy/DeheadEmAll.git" />
+		<dependencies>
+			<group targetFramework=".NETFramework4.7.2">
+				<dependency id="Serilog" version="2.10.0" />
+				<dependency id="Serilog.Sinks.Console" version="4.0.1" />
+				<dependency id="Serilog.Sinks.LogEmAll" version="0.0.2" />
+			</group>
+		</dependencies>
+	</metadata>
+	<files>
+		<file src="Resources\Docs\DeheadEmAll-LICENSE.txt" target="DeheadEmAll-LICENSE.txt" />
+		<file src="Resources\Images\DeheadEmAll.png" target="icon.png" />
+	</files>
+</package>
