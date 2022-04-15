@@ -11,8 +11,8 @@ Probably the easiest way to deheader your ROMs is to just put your ROMs into the
 - (.nes) - Nintendo Entertainment System files will be deheadered.
 - (.a78) - Atari 7800 files will be deheadered.
 - (.lnx) - Atari Lynx files will be deheadered.
-- No other files will be deheadered.  
-- No original files will be moved or deleted.  
+- ROMs in all sub directories will be recursively deheadered.
+- No original ROMs will be moved or deleted.
 - Deheadered ROMs will be placed in the ROMsDeheaded directory overwriting any existing deheadered ROMs with the same name.  
   
 If you happen to like bullshit, DeheadEmAll can also accept commands and options from the command line. For command line help, run the -help command.  
@@ -47,5 +47,5 @@ Let's work better together. We are looking to collaborate with like-minded peopl
 ## Contact
 GitHub: [https://github.com/TwistedTommy/DeheadEmAll](https://github.com/TwistedTommy/DeheadEmAll "GitHub")  
 ## Disclaimer
-DeheadEmAll does not upload, share, distribute or provide links to anything illegal, including ROMs or patches.
+We do not upload, share, distribute or provide links to anything illegal, including ROMs or patches.
 ###### Copyright (c) 2016-2022 DeheadEmAll - All Rights Reserved v2022-04-15-00

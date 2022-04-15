@@ -4,7 +4,7 @@
 		<id>DeheadEmAll</id>
 		<title>DeheadEmAll</title>
 		<version>0.0.0</version>
-		<description>Use the DeheadEmAll Library (.dll) to patch ROMs from anywhere in your application.  
+		<description>Use the DeheadEmAll Library (.dll) to deheader ROMs from anywhere in your application.  
   
 First, install or add the DeheadEmAll Nuget Package to your application by downloading the [nuget.nupkg](https://github.com/TwistedTommy?tab=packages&amp;repo_name=DeheadEmAll) to your project folder and opening a Nuget Package Manager Console in Visual Studio and type:  
   
@@ -15,7 +15,7 @@ Install-Package nuget.nupkg
 Then, create and use a new DeheadEmAll Object from anywhere in your application like the following:  
   
 ```
-DeheadEmAll.DeheadEmAll dea = new DeheadEmAll.DeheadEmAll();
+DeheadEmAll.DeheadEmAll dhea = new DeheadEmAll.DeheadEmAll();
 ```
 		</description>
 		<authors>DeheadEmAll</authors>
