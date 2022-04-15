@@ -4,13 +4,12 @@ Copyright (c) 2016-2022 DeheadEmAll - All Rights Reserved
 ---------------------------------------------------------------
 
 [I] About
-[II] Notes
-[III] Requirements
-[IV] Installation
-[V] How to Deheader ROMs
-[VI] Contributing
-[VII] Contact
-[VIII] Disclaimers
+[II] Requirements
+[III] Installation
+[IV] How to Deheader ROMs
+[V] Contributing
+[VI] Contact
+[VII] Disclaimers
 
 [I] About
 ---------------------------------------------------------------
@@ -30,17 +29,11 @@ Probably the easiest way to deheader your ROMs is to just put your ROMs into the
 
 If you happen to like bullshit, DeheadEmAll can also accept commands and options from the command line. For command line help, run the -help command.
 
-[II] Notes
----------------------------------------------------------------
-1) This software should NOT be used on files that are not backed up!
-2) This software should be installed as close to the drive's root directory as possible. The nature of things dictates that there will be very long filenames, on occasion. Keep in mind that some things may not work correctly if you choose too long of a path to put your files.
-3) This program will deheader all of the ROMs in the ROMs directory, including all sub directories, that match the criteria above.
-
-[III] Requirements
+[II] Requirements
 ---------------------------------------------------------------
 This software has been tested and verified working on Windows, Linux and Mac using .Net 4.7.2 or Mono.
 
-[IV] Installation
+[III] Installation
 ---------------------------------------------------------------
 Download and unzip the program to any location that you wish to use. However, this software should be installed as close to the drive's root directory as possible.
 
@@ -53,7 +46,7 @@ C:\DHEA\ROMs\
 C:\DHEA\ROMsDeheaded\
 C:\DHEA\DeheadEmAll-CLI.exe
 
-[V] How to Deheader ROMs
+[IV] How to Deheader ROMs
 ---------------------------------------------------------------
 Step 1)
 Put your ROMs into your ROMs directory. DeheadEmAll is recursive. You can put ROMs into sub directories.
@@ -63,7 +56,7 @@ If you like using a graphical interface, run the DeheadEmAll GUI, check the ROMs
 
 If you like using a command line interface, run the DeheadEmAll CLI directly or use some of the provided Windows Batch files to deheader all of your ROMs. Optionally, you may pass commands and options to the DeheadEmAll CLI. The proper syntax and help is available with the -help command.
 
-[VI] Contributing
+[V] Contributing
 ---------------------------------------------------------------
 Let's work better together. We are looking to collaborate with like-minded people who want to contribute in any capacity. Collaboration is open to everyone and we need your help if you are a:  
 - Collector
@@ -76,10 +69,10 @@ Let's work better together. We are looking to collaborate with like-minded peopl
 - Player
 - Tester
 
-[VII] Contact
+[VI] Contact
 ---------------------------------------------------------------
 GitHub: [https://github.com/TwistedTommy/DeheadEmAll](https://github.com/TwistedTommy/DeheadEmAll "GitHub")  
 
-[VIII] Disclaimers
+[VII] Disclaimers
 ---------------------------------------------------------------
 We do not upload, share, distribute or provide links to anything illegal, including ROMs or patches.
