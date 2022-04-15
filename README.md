@@ -11,9 +11,8 @@ Probably the easiest way to deheader your ROMs is to just put your ROMs into the
 - (.nes) - Nintendo Entertainment System files will be deheadered.
 - (.a78) - Atari 7800 files will be deheadered.
 - (.lnx) - Atari Lynx files will be deheadered.
-  
 - No other files will be deheadered.  
-- No original files or ROMs will be touched.  
+- No original files will be moved or deleted.  
 - Deheadered ROMs will be placed in the ROMsDeheaded directory overwriting any existing deheadered ROMs with the same name.  
   
 If you happen to like bullshit, DeheadEmAll can also accept commands and options from the command line. For command line help, run the -help command.  
@@ -30,8 +29,8 @@ The following tools and extensions are required to be installed in your Visual S
 - Microsoft Visual Studio Installer Projects
 ## Projects
 - DeheadEmAll - Class Library
-- DeheadEmAll-CLI - Console Application
-- DeheadEmAll-GUI - Forms Application
+- DeheadEmAll-CLI - Console App
+- DeheadEmAll-GUI - Windows Forms App
 - DeheadEmAll-Release - Release Project
 - DeheadEmAll-Setup - Setup Project
 ## Contributing
@@ -49,4 +48,4 @@ Let's work better together. We are looking to collaborate with like-minded peopl
 GitHub: [https://github.com/TwistedTommy/DeheadEmAll](https://github.com/TwistedTommy/DeheadEmAll "GitHub")  
 ## Disclaimer
 DeheadEmAll does not upload, share, distribute or provide links to anything illegal, including ROMs or patches.
-###### Copyright (c) 2016-2022 DeheadEmAll - All Rights Reserved v2022-04-14-00
+###### Copyright (c) 2016-2022 DeheadEmAll - All Rights Reserved v2022-04-15-00
