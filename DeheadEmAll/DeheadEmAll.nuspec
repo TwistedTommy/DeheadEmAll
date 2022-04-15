@@ -2,14 +2,27 @@
 <package>
 	<metadata>
 		<id>DeheadEmAll</id>
-		<version>0.0.0</version>
 		<title>DeheadEmAll</title>
+		<version>0.0.0</version>
+		<description>Use the DeheadEmAll Library (.dll) to patch ROMs from anywhere in your application.  
+  
+First, install or add the DeheadEmAll Nuget Package to your application by downloading the [nuget.nupkg](https://github.com/TwistedTommy?tab=packages&amp;repo_name=DeheadEmAll) to your project folder and opening a Nuget Package Manager Console in Visual Studio and type:  
+  
+```
+Install-Package nuget.nupkg
+```
+  
+Then, create and use a new DeheadEmAll Object from anywhere in your application like the following:  
+  
+```
+DeheadEmAll.DeheadEmAll dea = new DeheadEmAll.DeheadEmAll();
+```
+		</description>
 		<authors>DeheadEmAll</authors>
+		<license type="file">LICENSE.txt</license>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
-		<license type="file">DeheadEmAll-LICENSE.txt</license>
 		<icon>icon.png</icon>
 		<projectUrl>https://github.com/TwistedTommy/DeheadEmAll</projectUrl>
-		<description>The Original Automated ROM Deheaderer</description>
 		<releaseNotes>Use from anywhere in your application to Deheader ROMs</releaseNotes>
 		<copyright>Copyright (c) 2016-2022 DeheadEmAll - All Rights Reserved</copyright>
 		<tags>DeheadEmAll Deheader ROMs Automated ROM Deheaderer Dehead WindowsForms WinForms Windows Forms Application Console</tags>
@@ -23,7 +36,7 @@
 		</dependencies>
 	</metadata>
 	<files>
-		<file src="Resources\Docs\DeheadEmAll-LICENSE.txt" target="DeheadEmAll-LICENSE.txt" />
+		<file src="Resources\Docs\DeheadEmAll-LICENSE.txt" target="LICENSE.txt" />
 		<file src="Resources\Images\DeheadEmAll.png" target="icon.png" />
 	</files>
 </package>
