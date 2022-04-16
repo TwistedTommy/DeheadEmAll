@@ -44,8 +44,8 @@
     <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
       <HintPath>..\packages\Serilog.2.10.0\lib\net46\Serilog.dll</HintPath>
     </Reference>
-    <Reference Include="Serilog.Sinks.LogEmAll, Version=0.0.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Serilog.Sinks.LogEmAll.0.0.2\lib\net472\Serilog.Sinks.LogEmAll.dll</HintPath>
+    <Reference Include="Serilog.Sinks.LogEmAll, Version=0.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.LogEmAll.0.0.3\lib\net472\Serilog.Sinks.LogEmAll.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -114,9 +114,6 @@
       <Project>{06f4a6d4-ee7f-47d3-947c-a259f1fc3d84}</Project>
       <Name>DeheadEmAll</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resources\icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

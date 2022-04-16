@@ -22,17 +22,17 @@ DeheadEmAll.DeheadEmAll dhea = new DeheadEmAll.DeheadEmAll();
 		<license type="file">LICENSE.txt</license>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<icon>icon.png</icon>
+		<iconUrl>https://github.com/TwistedTommy/DeheadEmAll/raw/master/DeheadEmAll/Resources/Images/DeheadEmAll.png</iconUrl>
 		<projectUrl>https://github.com/TwistedTommy/DeheadEmAll</projectUrl>
-		<releaseNotes>Use from anywhere in your application to Deheader ROMs</releaseNotes>
+		<releaseNotes>See https://github.com/TwistedTommy/DeheadEmAll/releases for release notes.</releaseNotes>
 		<copyright>Copyright (c) 2016-2022 DeheadEmAll - All Rights Reserved</copyright>
 		<tags>DeheadEmAll Deheader ROMs Automated ROM Deheaderer Dehead WindowsForms WinForms Windows Forms Application Console</tags>
 		<repository type="git" url="https://github.com/TwistedTommy/DeheadEmAll.git" />
 		<dependencies>
-			<group targetFramework=".NETFramework4.7.2">
-				<dependency id="Serilog" version="2.10.0" />
-				<dependency id="Serilog.Sinks.Console" version="4.0.1" />
-				<dependency id="Serilog.Sinks.LogEmAll" version="0.0.2" />
-			</group>
+			<dependency id="ILMerge" version="3.0.41" />
+			<dependency id="Serilog" version="2.10.0" />
+			<dependency id="Serilog.Sinks.Console" version="4.0.1" />
+			<dependency id="Serilog.Sinks.LogEmAll" version="0.0.3" />
 		</dependencies>
 	</metadata>
 	<files>
