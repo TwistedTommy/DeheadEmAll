@@ -1,5 +1,5 @@
 ------------------------------------------------------------------
-DeheadEmAll - Help - CMD version 20220308
+DeheadEmAll - Help - CMD version 20220416
 Copyright (c) 2016-2022 DeheadEmAll - All Rights Reserved
 ------------------------------------------------------------------
 
@@ -43,3 +43,7 @@ Standard Options:
 	RD:		Path to the ROMs directory
 	RE:		Path to the deheadered ROMs directory
 	LF:		Path to the log file
+	LA:		Language
+				en - DEFAULT
+	LL:		Log level
+				Information - DEFAULT

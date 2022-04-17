@@ -66,7 +66,7 @@
             this.tsddbCancel = new System.Windows.Forms.ToolStripDropDownButton();
             this.tspbDeheaderProgress = new System.Windows.Forms.ToolStripProgressBar();
             this.tsslStatusMessage = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsslSpring = new System.Windows.Forms.ToolStripStatusLabel();
             this.tcMain = new System.Windows.Forms.TabControl();
             this.tabLog = new System.Windows.Forms.TabPage();
             this.rtblLog = new Serilog.Sinks.LogEmAll.RichTextBoxLog();
@@ -87,6 +87,11 @@
             this.rtbLicense = new System.Windows.Forms.RichTextBox();
             this.bgwStartupTasks = new System.ComponentModel.BackgroundWorker();
             this.bgwDeheaderROMs = new System.ComponentModel.BackgroundWorker();
+            this.gbSystem = new System.Windows.Forms.GroupBox();
+            this.cbLanguage = new System.Windows.Forms.ComboBox();
+            this.cbLogLevel = new System.Windows.Forms.ComboBox();
+            this.lblLanguage = new System.Windows.Forms.Label();
+            this.lblLogLevel = new System.Windows.Forms.Label();
             this.msMain.SuspendLayout();
             this.tsMain.SuspendLayout();
             this.ssMain.SuspendLayout();
@@ -97,6 +102,7 @@
             this.gbPaths.SuspendLayout();
             this.tabHelp.SuspendLayout();
             this.tabLicense.SuspendLayout();
+            this.gbSystem.SuspendLayout();
             this.SuspendLayout();
             // 
             // msMain
@@ -104,11 +110,8 @@
             this.msMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiCommand,
             this.tsmiView});
-            this.msMain.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.msMain, "msMain");
             this.msMain.Name = "msMain";
-            this.msMain.Size = new System.Drawing.Size(784, 24);
-            this.msMain.TabIndex = 0;
-            this.msMain.Text = "msMain";
             // 
             // tsmiCommand
             // 
@@ -122,66 +125,51 @@
             this.toolStripSeparator10,
             this.tsmiExit});
             this.tsmiCommand.Name = "tsmiCommand";
-            this.tsmiCommand.Size = new System.Drawing.Size(90, 20);
-            this.tsmiCommand.Text = "DeheadEmAll";
+            resources.ApplyResources(this.tsmiCommand, "tsmiCommand");
             // 
             // tsmiDeheaderROMs
             // 
-            this.tsmiDeheaderROMs.Enabled = false;
-            this.tsmiDeheaderROMs.Image = ((System.Drawing.Image)(resources.GetObject("tsmiDeheaderROMs.Image")));
+            resources.ApplyResources(this.tsmiDeheaderROMs, "tsmiDeheaderROMs");
             this.tsmiDeheaderROMs.Name = "tsmiDeheaderROMs";
-            this.tsmiDeheaderROMs.Size = new System.Drawing.Size(159, 22);
-            this.tsmiDeheaderROMs.Text = "Deheader ROMs";
             this.tsmiDeheaderROMs.Click += new System.EventHandler(this.DeheadROMs_Click);
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(156, 6);
+            resources.ApplyResources(this.toolStripSeparator8, "toolStripSeparator8");
             // 
             // tsmiLoadOptions
             // 
-            this.tsmiLoadOptions.Enabled = false;
-            this.tsmiLoadOptions.Image = ((System.Drawing.Image)(resources.GetObject("tsmiLoadOptions.Image")));
+            resources.ApplyResources(this.tsmiLoadOptions, "tsmiLoadOptions");
             this.tsmiLoadOptions.Name = "tsmiLoadOptions";
-            this.tsmiLoadOptions.Size = new System.Drawing.Size(159, 22);
-            this.tsmiLoadOptions.Text = "Load Options";
             this.tsmiLoadOptions.Click += new System.EventHandler(this.LoadOptions_Click);
             // 
             // tsmiSaveOptions
             // 
-            this.tsmiSaveOptions.Enabled = false;
-            this.tsmiSaveOptions.Image = ((System.Drawing.Image)(resources.GetObject("tsmiSaveOptions.Image")));
+            resources.ApplyResources(this.tsmiSaveOptions, "tsmiSaveOptions");
             this.tsmiSaveOptions.Name = "tsmiSaveOptions";
-            this.tsmiSaveOptions.Size = new System.Drawing.Size(159, 22);
-            this.tsmiSaveOptions.Text = "Save Options";
             this.tsmiSaveOptions.Click += new System.EventHandler(this.SaveOptions_Click);
             // 
             // toolStripSeparator9
             // 
             this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(156, 6);
+            resources.ApplyResources(this.toolStripSeparator9, "toolStripSeparator9");
             // 
             // tsmiSaveLog
             // 
-            this.tsmiSaveLog.Enabled = false;
-            this.tsmiSaveLog.Image = ((System.Drawing.Image)(resources.GetObject("tsmiSaveLog.Image")));
+            resources.ApplyResources(this.tsmiSaveLog, "tsmiSaveLog");
             this.tsmiSaveLog.Name = "tsmiSaveLog";
-            this.tsmiSaveLog.Size = new System.Drawing.Size(159, 22);
-            this.tsmiSaveLog.Text = "Save Log";
             this.tsmiSaveLog.Click += new System.EventHandler(this.SaveLog_Click);
             // 
             // toolStripSeparator10
             // 
             this.toolStripSeparator10.Name = "toolStripSeparator10";
-            this.toolStripSeparator10.Size = new System.Drawing.Size(156, 6);
+            resources.ApplyResources(this.toolStripSeparator10, "toolStripSeparator10");
             // 
             // tsmiExit
             // 
-            this.tsmiExit.Image = ((System.Drawing.Image)(resources.GetObject("tsmiExit.Image")));
+            resources.ApplyResources(this.tsmiExit, "tsmiExit");
             this.tsmiExit.Name = "tsmiExit";
-            this.tsmiExit.Size = new System.Drawing.Size(159, 22);
-            this.tsmiExit.Text = "Exit";
             this.tsmiExit.Click += new System.EventHandler(this.Exit_Click);
             // 
             // tsmiView
@@ -197,68 +185,62 @@
             this.toolStripSeparator7,
             this.tsmiToolba});
             this.tsmiView.Name = "tsmiView";
-            this.tsmiView.Size = new System.Drawing.Size(44, 20);
-            this.tsmiView.Text = "View";
+            resources.ApplyResources(this.tsmiView, "tsmiView");
             // 
             // tsmiLog
             // 
             this.tsmiLog.Checked = true;
             this.tsmiLog.CheckState = System.Windows.Forms.CheckState.Checked;
             this.tsmiLog.Name = "tsmiLog";
-            this.tsmiLog.Size = new System.Drawing.Size(116, 22);
-            this.tsmiLog.Text = "Log";
+            resources.ApplyResources(this.tsmiLog, "tsmiLog");
             this.tsmiLog.Click += new System.EventHandler(this.ViewLog_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(113, 6);
+            resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
             // 
             // tsmiOptions
             // 
             this.tsmiOptions.Checked = true;
             this.tsmiOptions.CheckState = System.Windows.Forms.CheckState.Checked;
             this.tsmiOptions.Name = "tsmiOptions";
-            this.tsmiOptions.Size = new System.Drawing.Size(116, 22);
-            this.tsmiOptions.Text = "Options";
+            resources.ApplyResources(this.tsmiOptions, "tsmiOptions");
             this.tsmiOptions.Click += new System.EventHandler(this.ViewOptions_Click);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(113, 6);
+            resources.ApplyResources(this.toolStripSeparator5, "toolStripSeparator5");
             // 
             // tsmiHelp
             // 
             this.tsmiHelp.Name = "tsmiHelp";
-            this.tsmiHelp.Size = new System.Drawing.Size(116, 22);
-            this.tsmiHelp.Text = "Help";
+            resources.ApplyResources(this.tsmiHelp, "tsmiHelp");
             this.tsmiHelp.Click += new System.EventHandler(this.ViewHelp_Click);
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(113, 6);
+            resources.ApplyResources(this.toolStripSeparator6, "toolStripSeparator6");
             // 
             // tsmiLicense
             // 
             this.tsmiLicense.Name = "tsmiLicense";
-            this.tsmiLicense.Size = new System.Drawing.Size(116, 22);
-            this.tsmiLicense.Text = "License";
+            resources.ApplyResources(this.tsmiLicense, "tsmiLicense");
             this.tsmiLicense.Click += new System.EventHandler(this.ViewLicense_Click);
             // 
             // toolStripSeparator7
             // 
             this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(113, 6);
+            resources.ApplyResources(this.toolStripSeparator7, "toolStripSeparator7");
             // 
             // tsmiToolba
             // 
             this.tsmiToolba.Checked = true;
             this.tsmiToolba.CheckState = System.Windows.Forms.CheckState.Checked;
             this.tsmiToolba.Name = "tsmiToolba";
-            this.tsmiToolba.Size = new System.Drawing.Size(116, 22);
-            this.tsmiToolba.Text = "Toolbar";
+            resources.ApplyResources(this.tsmiToolba, "tsmiToolba");
             this.tsmiToolba.Click += new System.EventHandler(this.ViewToolbar_Click);
             // 
             // tsMain
@@ -277,119 +259,85 @@
             this.tsbViewHelp,
             this.tsbViewLicense,
             this.tsbViewToolbar});
-            this.tsMain.Location = new System.Drawing.Point(0, 24);
+            resources.ApplyResources(this.tsMain, "tsMain");
             this.tsMain.Name = "tsMain";
-            this.tsMain.Size = new System.Drawing.Size(784, 39);
-            this.tsMain.TabIndex = 1;
-            this.tsMain.Text = "tsMain";
             // 
             // tsbDeheaderROMs
             // 
             this.tsbDeheaderROMs.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbDeheaderROMs.Enabled = false;
-            this.tsbDeheaderROMs.Image = ((System.Drawing.Image)(resources.GetObject("tsbDeheaderROMs.Image")));
-            this.tsbDeheaderROMs.ImageTransparentColor = System.Drawing.Color.Magenta;
+            resources.ApplyResources(this.tsbDeheaderROMs, "tsbDeheaderROMs");
             this.tsbDeheaderROMs.Name = "tsbDeheaderROMs";
-            this.tsbDeheaderROMs.Size = new System.Drawing.Size(36, 36);
-            this.tsbDeheaderROMs.Text = "Deheader ROMs";
             this.tsbDeheaderROMs.Click += new System.EventHandler(this.DeheadROMs_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             // 
             // tsbLoadOptions
             // 
             this.tsbLoadOptions.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbLoadOptions.Enabled = false;
-            this.tsbLoadOptions.Image = ((System.Drawing.Image)(resources.GetObject("tsbLoadOptions.Image")));
-            this.tsbLoadOptions.ImageTransparentColor = System.Drawing.Color.Magenta;
+            resources.ApplyResources(this.tsbLoadOptions, "tsbLoadOptions");
             this.tsbLoadOptions.Name = "tsbLoadOptions";
-            this.tsbLoadOptions.Size = new System.Drawing.Size(36, 36);
-            this.tsbLoadOptions.Text = "Load Options";
             this.tsbLoadOptions.Click += new System.EventHandler(this.LoadOptions_Click);
             // 
             // tsbSaveOptions
             // 
             this.tsbSaveOptions.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbSaveOptions.Enabled = false;
-            this.tsbSaveOptions.Image = ((System.Drawing.Image)(resources.GetObject("tsbSaveOptions.Image")));
-            this.tsbSaveOptions.ImageTransparentColor = System.Drawing.Color.Magenta;
+            resources.ApplyResources(this.tsbSaveOptions, "tsbSaveOptions");
             this.tsbSaveOptions.Name = "tsbSaveOptions";
-            this.tsbSaveOptions.Size = new System.Drawing.Size(36, 36);
-            this.tsbSaveOptions.Text = "Save Options";
             this.tsbSaveOptions.Click += new System.EventHandler(this.SaveOptions_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 39);
+            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
             // 
             // tsbSaveLog
             // 
             this.tsbSaveLog.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbSaveLog.Enabled = false;
-            this.tsbSaveLog.Image = ((System.Drawing.Image)(resources.GetObject("tsbSaveLog.Image")));
-            this.tsbSaveLog.ImageTransparentColor = System.Drawing.Color.Magenta;
+            resources.ApplyResources(this.tsbSaveLog, "tsbSaveLog");
             this.tsbSaveLog.Name = "tsbSaveLog";
-            this.tsbSaveLog.Size = new System.Drawing.Size(36, 36);
-            this.tsbSaveLog.Text = "Save Log";
             this.tsbSaveLog.Click += new System.EventHandler(this.SaveLog_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 39);
+            resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
             // 
             // tsbViewLog
             // 
             this.tsbViewLog.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbViewLog.Image = ((System.Drawing.Image)(resources.GetObject("tsbViewLog.Image")));
-            this.tsbViewLog.ImageTransparentColor = System.Drawing.Color.Magenta;
+            resources.ApplyResources(this.tsbViewLog, "tsbViewLog");
             this.tsbViewLog.Name = "tsbViewLog";
-            this.tsbViewLog.Size = new System.Drawing.Size(36, 36);
-            this.tsbViewLog.Text = "Log";
             this.tsbViewLog.Click += new System.EventHandler(this.ViewLog_Click);
             // 
             // tsbViewOptions
             // 
             this.tsbViewOptions.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbViewOptions.Image = ((System.Drawing.Image)(resources.GetObject("tsbViewOptions.Image")));
-            this.tsbViewOptions.ImageTransparentColor = System.Drawing.Color.Magenta;
+            resources.ApplyResources(this.tsbViewOptions, "tsbViewOptions");
             this.tsbViewOptions.Name = "tsbViewOptions";
-            this.tsbViewOptions.Size = new System.Drawing.Size(36, 36);
-            this.tsbViewOptions.Text = "Options";
             this.tsbViewOptions.Click += new System.EventHandler(this.ViewOptions_Click);
             // 
             // tsbViewHelp
             // 
             this.tsbViewHelp.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbViewHelp.Image = ((System.Drawing.Image)(resources.GetObject("tsbViewHelp.Image")));
-            this.tsbViewHelp.ImageTransparentColor = System.Drawing.Color.Magenta;
+            resources.ApplyResources(this.tsbViewHelp, "tsbViewHelp");
             this.tsbViewHelp.Name = "tsbViewHelp";
-            this.tsbViewHelp.Size = new System.Drawing.Size(36, 36);
-            this.tsbViewHelp.Text = "Help";
             this.tsbViewHelp.Click += new System.EventHandler(this.ViewHelp_Click);
             // 
             // tsbViewLicense
             // 
             this.tsbViewLicense.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbViewLicense.Image = ((System.Drawing.Image)(resources.GetObject("tsbViewLicense.Image")));
-            this.tsbViewLicense.ImageTransparentColor = System.Drawing.Color.Magenta;
+            resources.ApplyResources(this.tsbViewLicense, "tsbViewLicense");
             this.tsbViewLicense.Name = "tsbViewLicense";
-            this.tsbViewLicense.Size = new System.Drawing.Size(36, 36);
-            this.tsbViewLicense.Text = "License";
             this.tsbViewLicense.Click += new System.EventHandler(this.ViewLicense_Click);
             // 
             // tsbViewToolbar
             // 
             this.tsbViewToolbar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbViewToolbar.Image = ((System.Drawing.Image)(resources.GetObject("tsbViewToolbar.Image")));
-            this.tsbViewToolbar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            resources.ApplyResources(this.tsbViewToolbar, "tsbViewToolbar");
             this.tsbViewToolbar.Name = "tsbViewToolbar";
-            this.tsbViewToolbar.Size = new System.Drawing.Size(36, 36);
-            this.tsbViewToolbar.Text = "Toolbar";
             this.tsbViewToolbar.Click += new System.EventHandler(this.ViewToolbar_Click);
             // 
             // ssMain
@@ -398,41 +346,34 @@
             this.tsddbCancel,
             this.tspbDeheaderProgress,
             this.tsslStatusMessage,
-            this.toolStripStatusLabel1});
-            this.ssMain.Location = new System.Drawing.Point(0, 428);
+            this.tsslSpring});
+            resources.ApplyResources(this.ssMain, "ssMain");
             this.ssMain.Name = "ssMain";
-            this.ssMain.Size = new System.Drawing.Size(784, 22);
-            this.ssMain.TabIndex = 2;
-            this.ssMain.Text = "ssMain";
             // 
             // tsddbCancel
             // 
             this.tsddbCancel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsddbCancel.Enabled = false;
+            resources.ApplyResources(this.tsddbCancel, "tsddbCancel");
             this.tsddbCancel.Image = global::DeheadEmAll_GUI.Properties.Resources.Cancel_16x16;
-            this.tsddbCancel.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsddbCancel.Name = "tsddbCancel";
             this.tsddbCancel.ShowDropDownArrow = false;
-            this.tsddbCancel.Size = new System.Drawing.Size(20, 20);
-            this.tsddbCancel.Text = "Cancel";
             this.tsddbCancel.Click += new System.EventHandler(this.Cancel_Click);
             // 
             // tspbDeheaderProgress
             // 
             this.tspbDeheaderProgress.Name = "tspbDeheaderProgress";
-            this.tspbDeheaderProgress.Size = new System.Drawing.Size(200, 16);
+            resources.ApplyResources(this.tspbDeheaderProgress, "tspbDeheaderProgress");
             // 
             // tsslStatusMessage
             // 
             this.tsslStatusMessage.Name = "tsslStatusMessage";
-            this.tsslStatusMessage.Size = new System.Drawing.Size(148, 17);
-            this.tsslStatusMessage.Text = "Performing startup tasks ...";
+            resources.ApplyResources(this.tsslStatusMessage, "tsslStatusMessage");
             // 
-            // toolStripStatusLabel1
+            // tsslSpring
             // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(399, 17);
-            this.toolStripStatusLabel1.Spring = true;
+            this.tsslSpring.Name = "tsslSpring";
+            resources.ApplyResources(this.tsslSpring, "tsslSpring");
+            this.tsslSpring.Spring = true;
             // 
             // tcMain
             // 
@@ -440,211 +381,133 @@
             this.tcMain.Controls.Add(this.tabOptions);
             this.tcMain.Controls.Add(this.tabHelp);
             this.tcMain.Controls.Add(this.tabLicense);
-            this.tcMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tcMain.Location = new System.Drawing.Point(0, 63);
+            resources.ApplyResources(this.tcMain, "tcMain");
             this.tcMain.Name = "tcMain";
             this.tcMain.SelectedIndex = 0;
-            this.tcMain.Size = new System.Drawing.Size(784, 365);
-            this.tcMain.TabIndex = 3;
             // 
             // tabLog
             // 
             this.tabLog.Controls.Add(this.rtblLog);
-            this.tabLog.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.tabLog, "tabLog");
             this.tabLog.Name = "tabLog";
-            this.tabLog.Padding = new System.Windows.Forms.Padding(3);
-            this.tabLog.Size = new System.Drawing.Size(776, 339);
-            this.tabLog.TabIndex = 0;
-            this.tabLog.Text = " Log ";
             this.tabLog.UseVisualStyleBackColor = true;
             // 
             // rtblLog
             // 
-            this.rtblLog.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rtblLog.Location = new System.Drawing.Point(6, 6);
+            resources.ApplyResources(this.rtblLog, "rtblLog");
             this.rtblLog.Name = "rtblLog";
             this.rtblLog.ReadOnly = true;
-            this.rtblLog.Size = new System.Drawing.Size(764, 327);
-            this.rtblLog.TabIndex = 0;
-            this.rtblLog.Text = "";
             // 
             // tabOptions
             // 
+            this.tabOptions.Controls.Add(this.gbSystem);
             this.tabOptions.Controls.Add(this.gbROMs);
             this.tabOptions.Controls.Add(this.gbPaths);
-            this.tabOptions.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.tabOptions, "tabOptions");
             this.tabOptions.Name = "tabOptions";
-            this.tabOptions.Padding = new System.Windows.Forms.Padding(3);
-            this.tabOptions.Size = new System.Drawing.Size(776, 339);
-            this.tabOptions.TabIndex = 1;
-            this.tabOptions.Text = " Options ";
             this.tabOptions.UseVisualStyleBackColor = true;
             // 
             // gbROMs
             // 
-            this.gbROMs.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.gbROMs, "gbROMs");
             this.gbROMs.Controls.Add(this.chkA7800);
             this.gbROMs.Controls.Add(this.chkLynx);
             this.gbROMs.Controls.Add(this.chkNES);
             this.gbROMs.Controls.Add(this.chkFDS);
-            this.gbROMs.Location = new System.Drawing.Point(6, 6);
             this.gbROMs.Name = "gbROMs";
-            this.gbROMs.Size = new System.Drawing.Size(764, 42);
-            this.gbROMs.TabIndex = 2;
             this.gbROMs.TabStop = false;
-            this.gbROMs.Text = "ROMs";
             // 
             // chkA7800
             // 
-            this.chkA7800.AutoSize = true;
+            resources.ApplyResources(this.chkA7800, "chkA7800");
             this.chkA7800.Checked = true;
             this.chkA7800.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkA7800.Location = new System.Drawing.Point(6, 19);
             this.chkA7800.Name = "chkA7800";
-            this.chkA7800.Size = new System.Drawing.Size(87, 17);
-            this.chkA7800.TabIndex = 3;
-            this.chkA7800.Text = "A7800 (.a78)";
             this.chkA7800.UseVisualStyleBackColor = true;
             // 
             // chkLynx
             // 
-            this.chkLynx.AutoSize = true;
+            resources.ApplyResources(this.chkLynx, "chkLynx");
             this.chkLynx.Checked = true;
             this.chkLynx.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkLynx.Location = new System.Drawing.Point(178, 19);
             this.chkLynx.Name = "chkLynx";
-            this.chkLynx.Size = new System.Drawing.Size(73, 17);
-            this.chkLynx.TabIndex = 2;
-            this.chkLynx.Text = "Lynx (.lnx)";
             this.chkLynx.UseVisualStyleBackColor = true;
             // 
             // chkNES
             // 
-            this.chkNES.AutoSize = true;
+            resources.ApplyResources(this.chkNES, "chkNES");
             this.chkNES.Checked = true;
             this.chkNES.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkNES.Location = new System.Drawing.Point(257, 19);
             this.chkNES.Name = "chkNES";
-            this.chkNES.Size = new System.Drawing.Size(77, 17);
-            this.chkNES.TabIndex = 1;
-            this.chkNES.Text = "NES (.nes)";
             this.chkNES.UseVisualStyleBackColor = true;
             // 
             // chkFDS
             // 
-            this.chkFDS.AutoSize = true;
+            resources.ApplyResources(this.chkFDS, "chkFDS");
             this.chkFDS.Checked = true;
             this.chkFDS.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkFDS.Location = new System.Drawing.Point(99, 19);
             this.chkFDS.Name = "chkFDS";
-            this.chkFDS.Size = new System.Drawing.Size(73, 17);
-            this.chkFDS.TabIndex = 0;
-            this.chkFDS.Text = "FDS (.fds)";
             this.chkFDS.UseVisualStyleBackColor = true;
             // 
             // gbPaths
             // 
-            this.gbPaths.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.gbPaths, "gbPaths");
             this.gbPaths.Controls.Add(this.txtPathROMsDeheaderedDir);
             this.gbPaths.Controls.Add(this.txtPathROMsDir);
             this.gbPaths.Controls.Add(this.lblROMsDeheaderedDir);
             this.gbPaths.Controls.Add(this.lblROMsDir);
-            this.gbPaths.Location = new System.Drawing.Point(6, 54);
             this.gbPaths.Name = "gbPaths";
-            this.gbPaths.Size = new System.Drawing.Size(764, 71);
-            this.gbPaths.TabIndex = 0;
             this.gbPaths.TabStop = false;
-            this.gbPaths.Text = "Paths";
             // 
             // txtPathROMsDeheaderedDir
             // 
-            this.txtPathROMsDeheaderedDir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPathROMsDeheaderedDir.Location = new System.Drawing.Point(133, 45);
+            resources.ApplyResources(this.txtPathROMsDeheaderedDir, "txtPathROMsDeheaderedDir");
             this.txtPathROMsDeheaderedDir.Name = "txtPathROMsDeheaderedDir";
             this.txtPathROMsDeheaderedDir.ReadOnly = true;
-            this.txtPathROMsDeheaderedDir.Size = new System.Drawing.Size(625, 20);
-            this.txtPathROMsDeheaderedDir.TabIndex = 5;
             this.txtPathROMsDeheaderedDir.Click += new System.EventHandler(this.ChangeROMsDeheaderedDir_Click);
             // 
             // txtPathROMsDir
             // 
-            this.txtPathROMsDir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPathROMsDir.Location = new System.Drawing.Point(133, 19);
+            resources.ApplyResources(this.txtPathROMsDir, "txtPathROMsDir");
             this.txtPathROMsDir.Name = "txtPathROMsDir";
             this.txtPathROMsDir.ReadOnly = true;
-            this.txtPathROMsDir.Size = new System.Drawing.Size(625, 20);
-            this.txtPathROMsDir.TabIndex = 4;
             this.txtPathROMsDir.Click += new System.EventHandler(this.ChangeROMsDir_Click);
             // 
             // lblROMsDeheaderedDir
             // 
-            this.lblROMsDeheaderedDir.AutoSize = true;
-            this.lblROMsDeheaderedDir.Location = new System.Drawing.Point(6, 48);
+            resources.ApplyResources(this.lblROMsDeheaderedDir, "lblROMsDeheaderedDir");
             this.lblROMsDeheaderedDir.Name = "lblROMsDeheaderedDir";
-            this.lblROMsDeheaderedDir.Size = new System.Drawing.Size(121, 13);
-            this.lblROMsDeheaderedDir.TabIndex = 3;
-            this.lblROMsDeheaderedDir.Text = "ROMs Deheadered Dir: ";
             // 
             // lblROMsDir
             // 
-            this.lblROMsDir.AutoSize = true;
-            this.lblROMsDir.Location = new System.Drawing.Point(6, 22);
+            resources.ApplyResources(this.lblROMsDir, "lblROMsDir");
             this.lblROMsDir.Name = "lblROMsDir";
-            this.lblROMsDir.Size = new System.Drawing.Size(59, 13);
-            this.lblROMsDir.TabIndex = 2;
-            this.lblROMsDir.Text = "ROMs Dir: ";
             // 
             // tabHelp
             // 
             this.tabHelp.Controls.Add(this.rtbHelp);
-            this.tabHelp.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.tabHelp, "tabHelp");
             this.tabHelp.Name = "tabHelp";
-            this.tabHelp.Padding = new System.Windows.Forms.Padding(3);
-            this.tabHelp.Size = new System.Drawing.Size(776, 339);
-            this.tabHelp.TabIndex = 2;
-            this.tabHelp.Text = " Help ";
             this.tabHelp.UseVisualStyleBackColor = true;
             // 
             // rtbHelp
             // 
-            this.rtbHelp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rtbHelp.Location = new System.Drawing.Point(6, 6);
+            resources.ApplyResources(this.rtbHelp, "rtbHelp");
             this.rtbHelp.Name = "rtbHelp";
             this.rtbHelp.ReadOnly = true;
-            this.rtbHelp.Size = new System.Drawing.Size(764, 341);
-            this.rtbHelp.TabIndex = 0;
-            this.rtbHelp.Text = "";
             // 
             // tabLicense
             // 
             this.tabLicense.Controls.Add(this.rtbLicense);
-            this.tabLicense.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.tabLicense, "tabLicense");
             this.tabLicense.Name = "tabLicense";
-            this.tabLicense.Padding = new System.Windows.Forms.Padding(3);
-            this.tabLicense.Size = new System.Drawing.Size(776, 339);
-            this.tabLicense.TabIndex = 3;
-            this.tabLicense.Text = " License ";
             this.tabLicense.UseVisualStyleBackColor = true;
             // 
             // rtbLicense
             // 
-            this.rtbLicense.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rtbLicense.Location = new System.Drawing.Point(6, 6);
+            resources.ApplyResources(this.rtbLicense, "rtbLicense");
             this.rtbLicense.Name = "rtbLicense";
             this.rtbLicense.ReadOnly = true;
-            this.rtbLicense.Size = new System.Drawing.Size(764, 327);
-            this.rtbLicense.TabIndex = 0;
-            this.rtbLicense.Text = "";
             // 
             // bgwStartupTasks
             // 
@@ -659,19 +522,54 @@
             this.bgwDeheaderROMs.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.DeheaderROMs_ProgressChanged);
             this.bgwDeheaderROMs.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.DeheaderROMs_RunWorkerCompleted);
             // 
+            // gbSystem
+            // 
+            resources.ApplyResources(this.gbSystem, "gbSystem");
+            this.gbSystem.Controls.Add(this.lblLogLevel);
+            this.gbSystem.Controls.Add(this.lblLanguage);
+            this.gbSystem.Controls.Add(this.cbLogLevel);
+            this.gbSystem.Controls.Add(this.cbLanguage);
+            this.gbSystem.Name = "gbSystem";
+            this.gbSystem.TabStop = false;
+            // 
+            // cbLanguage
+            // 
+            resources.ApplyResources(this.cbLanguage, "cbLanguage");
+            this.cbLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLanguage.FormattingEnabled = true;
+            this.cbLanguage.Items.AddRange(new object[] {
+            resources.GetString("cbLanguage.Items")});
+            this.cbLanguage.Name = "cbLanguage";
+            // 
+            // cbLogLevel
+            // 
+            resources.ApplyResources(this.cbLogLevel, "cbLogLevel");
+            this.cbLogLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLogLevel.FormattingEnabled = true;
+            this.cbLogLevel.Items.AddRange(new object[] {
+            resources.GetString("cbLogLevel.Items")});
+            this.cbLogLevel.Name = "cbLogLevel";
+            // 
+            // lblLanguage
+            // 
+            resources.ApplyResources(this.lblLanguage, "lblLanguage");
+            this.lblLanguage.Name = "lblLanguage";
+            // 
+            // lblLogLevel
+            // 
+            resources.ApplyResources(this.lblLogLevel, "lblLogLevel");
+            this.lblLogLevel.Name = "lblLogLevel";
+            // 
             // FrmDeheadEmAll
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 450);
             this.Controls.Add(this.tcMain);
             this.Controls.Add(this.ssMain);
             this.Controls.Add(this.tsMain);
             this.Controls.Add(this.msMain);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.msMain;
             this.Name = "FrmDeheadEmAll";
-            this.Text = "DeheadEmAll";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_FormClosing);
             this.Shown += new System.EventHandler(this.Fprm_Shown);
@@ -690,6 +588,8 @@
             this.gbPaths.PerformLayout();
             this.tabHelp.ResumeLayout(false);
             this.tabLicense.ResumeLayout(false);
+            this.gbSystem.ResumeLayout(false);
+            this.gbSystem.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -752,9 +652,14 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiDeheaderROMs;
         private System.Windows.Forms.ToolStripButton tsbDeheaderROMs;
         private System.Windows.Forms.ToolStripDropDownButton tsddbCancel;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel tsslSpring;
         private Serilog.Sinks.LogEmAll.RichTextBoxLog rtblLog;
         private System.Windows.Forms.ToolStripProgressBar tspbDeheaderProgress;
+        private System.Windows.Forms.GroupBox gbSystem;
+        private System.Windows.Forms.Label lblLogLevel;
+        private System.Windows.Forms.Label lblLanguage;
+        private System.Windows.Forms.ComboBox cbLogLevel;
+        private System.Windows.Forms.ComboBox cbLanguage;
     }
 }
 

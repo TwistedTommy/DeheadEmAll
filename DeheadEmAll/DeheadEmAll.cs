@@ -47,10 +47,12 @@ namespace DeheadEmAll
 
         #region Private Members
 
-        // Private members.
         private readonly string _strAppName = FileVersionInfo.GetVersionInfo(Assembly.GetEntryAssembly().Location).ProductName;
         private readonly string _strAppVersion = FileVersionInfo.GetVersionInfo(Assembly.GetEntryAssembly().Location).ProductVersion;
         private readonly string _strAppCopyright = FileVersionInfo.GetVersionInfo(Assembly.GetEntryAssembly().Location).LegalCopyright;
+        private readonly string _strLibName = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).ProductName;
+        private readonly string _strLibVersion = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).ProductVersion;
+        private readonly string _strLibCopyright = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).LegalCopyright;
         private string _strCommandSwitch = "-deheadall";
         private string _strPathROMsDir = Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), "ROMs");
         private string _strPathROMsDeheadedDir = Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), "ROMsDeheaded");
@@ -61,6 +63,10 @@ namespace DeheadEmAll
         private bool _boolLynx = true;
         private bool _boolA7800 = true;
         private ListStringLog _logLines = new ListStringLog();
+        private string _strLanguage = "en";
+        private string _strLogLevel = "Information";
+        private readonly string[] _arrLanguages = { "en" };
+        private readonly string[] _arrLogLevels = { "Information" };
 
         #endregion
 
@@ -82,6 +88,24 @@ namespace DeheadEmAll
         public string AppCopyright
         {
             get { return _strAppCopyright; }
+            set { }
+        }
+        /// LibName
+        public string LibName
+        {
+            get { return _strLibName; }
+            set { }
+        }
+        /// LibVersion
+        public string LibVersion
+        {
+            get { return _strLibVersion; }
+            set { }
+        }
+        /// LibCopyright
+        public string LibCopyright
+        {
+            get { return _strLibCopyright; }
             set { }
         }
         /// CommandSwitch
@@ -144,6 +168,18 @@ namespace DeheadEmAll
             get { return _logLines; }
             set { _logLines = value; }
         }
+        /// Language
+        public string Language
+        {
+            get { return _strLanguage; }
+            set { _strLanguage = value; }
+        }
+        /// LogLevel
+        public string LogLevel
+        {
+            get { return _strLogLevel; }
+            set { _strLogLevel = value; }
+        }
 
         #endregion
 
@@ -204,6 +240,22 @@ namespace DeheadEmAll
                             if (xdocOptions.Element("Options").Element("ROMs").Element("Lynx") != null) { Lynx = Convert.ToBoolean(xdocOptions.Element("Options").Element("ROMs").Element("Lynx").Value); }
                             else { Log.Information("Options file is corrupt or outdated (Lynx)"); }
                         }
+                        if (xdocOptions.Element("Options").Element("System") == null) { Log.Information("Options file is corrupt or outdated (System)"); }
+                        else
+                        {
+                            if (xdocOptions.Element("Options").Element("System").Element("Language") != null)
+                            {
+                                if (_arrLanguages.Contains(xdocOptions.Element("Options").Element("System").Element("Language").Value)) { Language = xdocOptions.Element("Options").Element("System").Element("Language").Value; }
+                                else { Log.Warning("Options file option is invalid dummy (Language)"); }
+                            }
+                            else { Log.Warning("Options file is corrupt or outdated (Language)"); }
+                            if (xdocOptions.Element("Options").Element("System").Element("LogLevel") != null)
+                            {
+                                if (_arrLogLevels.Contains(xdocOptions.Element("Options").Element("System").Element("LogLevel").Value)) { LogLevel = xdocOptions.Element("Options").Element("System").Element("LogLevel").Value; }
+                                else { Log.Warning("Options file option is invalid dummy (LogLevel)"); }
+                            }
+                            else { Log.Warning("Options file is corrupt or outdated (LogLevel)"); }
+                        }
                     }
 
                     // Print to screen
@@ -262,6 +314,16 @@ namespace DeheadEmAll
                         // Set the path to the log file.
                         PathLogFile = strArg.Substring(3);
                     }
+                    if (Regex.IsMatch(strArg, "^LA:", RegexOptions.IgnoreCase) == true)
+                    {
+                        // Set the language.
+                        Language = strArg.Substring(3);
+                    }
+                    if (Regex.IsMatch(strArg, "^LL:", RegexOptions.IgnoreCase) == true)
+                    {
+                        // Set the log level.
+                        LogLevel = strArg.Substring(3);
+                    }
                 }
             }
             catch (Exception ex)
@@ -305,6 +367,10 @@ namespace DeheadEmAll
                             new XElement("FDS", FDS),
                             new XElement("NES", NES),
                             new XElement("Lynx", Lynx)
+                        ),
+                        new XElement("System",
+                            new XElement("Language", Language),
+                            new XElement("LogLevel", LogLevel)
                         )
                     )
                 );

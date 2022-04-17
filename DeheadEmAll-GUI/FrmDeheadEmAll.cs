@@ -25,32 +25,34 @@ namespace DeheadEmAll_GUI
             InitializeComponent();
 
             // Print the version.
-            this.DHEA.PrintVersion();
+            DHEA.PrintVersion();
 
             // Load the options passed from the command line arguments.
-            this.DHEA.LoadOptionsFromCLI(Environment.GetCommandLineArgs());
+            DHEA.LoadOptionsFromCLI(Environment.GetCommandLineArgs());
 
             // Load the options passed from the default options file.
-            this.DHEA.LoadOptionsFromFile();
+            DHEA.LoadOptionsFromFile();
 
             // Add data bindings.
-            this.chkA7800.DataBindings.Add("Checked", this.DHEA, "A7800");
-            this.chkNES.DataBindings.Add("Checked", this.DHEA, "NES");
-            this.chkLynx.DataBindings.Add("Checked", this.DHEA, "Lynx");
-            this.chkFDS.DataBindings.Add("Checked", this.DHEA, "FDS");
-            this.txtPathROMsDir.DataBindings.Add("Text", this.DHEA, "PathROMsDir");
-            this.txtPathROMsDeheaderedDir.DataBindings.Add("Text", this.DHEA, "PathROMsDeheadedDir");
+            chkA7800.DataBindings.Add("Checked", DHEA, "A7800");
+            chkNES.DataBindings.Add("Checked", DHEA, "NES");
+            chkLynx.DataBindings.Add("Checked", DHEA, "Lynx");
+            chkFDS.DataBindings.Add("Checked", DHEA, "FDS");
+            txtPathROMsDir.DataBindings.Add("Text", DHEA, "PathROMsDir");
+            txtPathROMsDeheaderedDir.DataBindings.Add("Text", DHEA, "PathROMsDeheadedDir");
+            cbLanguage.DataBindings.Add("SelectedItem", DHEA, "Language");
+            cbLogLevel.DataBindings.Add("SelectedItem", DHEA, "LogLevel");
 
             // Update the title.
-            this.Text = this.DHEA.AppName + " v" + this.DHEA.AppVersion;
+            UpdateTitle();
 
             // Hide the Help and License tabs.
-            this.tcMain.TabPages.Remove(tabHelp);
-            this.tcMain.TabPages.Remove(tabLicense);
+            tcMain.TabPages.Remove(tabHelp);
+            tcMain.TabPages.Remove(tabLicense);
 
             // Load the GUI RichTextBoxes from resources.
-            this.rtbHelp.Text = DeheadEmAll.Properties.Resources.DeheadEmAll_HELP;
-            this.rtbLicense.Text = DeheadEmAll.Properties.Resources.DeheadEmAll_LICENSE;
+            rtbHelp.Text = DeheadEmAll.Properties.Resources.DeheadEmAll_HELP;
+            rtbLicense.Text = DeheadEmAll.Properties.Resources.DeheadEmAll_LICENSE;
         }
 
         #endregion
