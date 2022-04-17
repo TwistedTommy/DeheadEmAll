@@ -71,6 +71,11 @@
             this.tabLog = new System.Windows.Forms.TabPage();
             this.rtblLog = new Serilog.Sinks.LogEmAll.RichTextBoxLog();
             this.tabOptions = new System.Windows.Forms.TabPage();
+            this.gbSystem = new System.Windows.Forms.GroupBox();
+            this.lblLogLevel = new System.Windows.Forms.Label();
+            this.lblLanguage = new System.Windows.Forms.Label();
+            this.cbLogLevel = new System.Windows.Forms.ComboBox();
+            this.cbLanguage = new System.Windows.Forms.ComboBox();
             this.gbROMs = new System.Windows.Forms.GroupBox();
             this.chkA7800 = new System.Windows.Forms.CheckBox();
             this.chkLynx = new System.Windows.Forms.CheckBox();
@@ -87,22 +92,20 @@
             this.rtbLicense = new System.Windows.Forms.RichTextBox();
             this.bgwStartupTasks = new System.ComponentModel.BackgroundWorker();
             this.bgwDeheaderROMs = new System.ComponentModel.BackgroundWorker();
-            this.gbSystem = new System.Windows.Forms.GroupBox();
-            this.cbLanguage = new System.Windows.Forms.ComboBox();
-            this.cbLogLevel = new System.Windows.Forms.ComboBox();
-            this.lblLanguage = new System.Windows.Forms.Label();
-            this.lblLogLevel = new System.Windows.Forms.Label();
+            this.gbOptionsInfo = new System.Windows.Forms.GroupBox();
+            this.lblOptionsInfo1 = new System.Windows.Forms.Label();
             this.msMain.SuspendLayout();
             this.tsMain.SuspendLayout();
             this.ssMain.SuspendLayout();
             this.tcMain.SuspendLayout();
             this.tabLog.SuspendLayout();
             this.tabOptions.SuspendLayout();
+            this.gbSystem.SuspendLayout();
             this.gbROMs.SuspendLayout();
             this.gbPaths.SuspendLayout();
             this.tabHelp.SuspendLayout();
             this.tabLicense.SuspendLayout();
-            this.gbSystem.SuspendLayout();
+            this.gbOptionsInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // msMain
@@ -400,12 +403,51 @@
             // 
             // tabOptions
             // 
+            this.tabOptions.Controls.Add(this.gbOptionsInfo);
             this.tabOptions.Controls.Add(this.gbSystem);
             this.tabOptions.Controls.Add(this.gbROMs);
             this.tabOptions.Controls.Add(this.gbPaths);
             resources.ApplyResources(this.tabOptions, "tabOptions");
             this.tabOptions.Name = "tabOptions";
             this.tabOptions.UseVisualStyleBackColor = true;
+            // 
+            // gbSystem
+            // 
+            resources.ApplyResources(this.gbSystem, "gbSystem");
+            this.gbSystem.Controls.Add(this.lblLogLevel);
+            this.gbSystem.Controls.Add(this.lblLanguage);
+            this.gbSystem.Controls.Add(this.cbLogLevel);
+            this.gbSystem.Controls.Add(this.cbLanguage);
+            this.gbSystem.Name = "gbSystem";
+            this.gbSystem.TabStop = false;
+            // 
+            // lblLogLevel
+            // 
+            resources.ApplyResources(this.lblLogLevel, "lblLogLevel");
+            this.lblLogLevel.Name = "lblLogLevel";
+            // 
+            // lblLanguage
+            // 
+            resources.ApplyResources(this.lblLanguage, "lblLanguage");
+            this.lblLanguage.Name = "lblLanguage";
+            // 
+            // cbLogLevel
+            // 
+            resources.ApplyResources(this.cbLogLevel, "cbLogLevel");
+            this.cbLogLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLogLevel.FormattingEnabled = true;
+            this.cbLogLevel.Items.AddRange(new object[] {
+            resources.GetString("cbLogLevel.Items")});
+            this.cbLogLevel.Name = "cbLogLevel";
+            // 
+            // cbLanguage
+            // 
+            resources.ApplyResources(this.cbLanguage, "cbLanguage");
+            this.cbLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLanguage.FormattingEnabled = true;
+            this.cbLanguage.Items.AddRange(new object[] {
+            resources.GetString("cbLanguage.Items")});
+            this.cbLanguage.Name = "cbLanguage";
             // 
             // gbROMs
             // 
@@ -522,43 +564,17 @@
             this.bgwDeheaderROMs.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.DeheaderROMs_ProgressChanged);
             this.bgwDeheaderROMs.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.DeheaderROMs_RunWorkerCompleted);
             // 
-            // gbSystem
+            // gbOptionsInfo
             // 
-            resources.ApplyResources(this.gbSystem, "gbSystem");
-            this.gbSystem.Controls.Add(this.lblLogLevel);
-            this.gbSystem.Controls.Add(this.lblLanguage);
-            this.gbSystem.Controls.Add(this.cbLogLevel);
-            this.gbSystem.Controls.Add(this.cbLanguage);
-            this.gbSystem.Name = "gbSystem";
-            this.gbSystem.TabStop = false;
+            resources.ApplyResources(this.gbOptionsInfo, "gbOptionsInfo");
+            this.gbOptionsInfo.Controls.Add(this.lblOptionsInfo1);
+            this.gbOptionsInfo.Name = "gbOptionsInfo";
+            this.gbOptionsInfo.TabStop = false;
             // 
-            // cbLanguage
+            // lblOptionsInfo1
             // 
-            resources.ApplyResources(this.cbLanguage, "cbLanguage");
-            this.cbLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbLanguage.FormattingEnabled = true;
-            this.cbLanguage.Items.AddRange(new object[] {
-            resources.GetString("cbLanguage.Items")});
-            this.cbLanguage.Name = "cbLanguage";
-            // 
-            // cbLogLevel
-            // 
-            resources.ApplyResources(this.cbLogLevel, "cbLogLevel");
-            this.cbLogLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbLogLevel.FormattingEnabled = true;
-            this.cbLogLevel.Items.AddRange(new object[] {
-            resources.GetString("cbLogLevel.Items")});
-            this.cbLogLevel.Name = "cbLogLevel";
-            // 
-            // lblLanguage
-            // 
-            resources.ApplyResources(this.lblLanguage, "lblLanguage");
-            this.lblLanguage.Name = "lblLanguage";
-            // 
-            // lblLogLevel
-            // 
-            resources.ApplyResources(this.lblLogLevel, "lblLogLevel");
-            this.lblLogLevel.Name = "lblLogLevel";
+            resources.ApplyResources(this.lblOptionsInfo1, "lblOptionsInfo1");
+            this.lblOptionsInfo1.Name = "lblOptionsInfo1";
             // 
             // FrmDeheadEmAll
             // 
@@ -582,14 +598,16 @@
             this.tcMain.ResumeLayout(false);
             this.tabLog.ResumeLayout(false);
             this.tabOptions.ResumeLayout(false);
+            this.gbSystem.ResumeLayout(false);
+            this.gbSystem.PerformLayout();
             this.gbROMs.ResumeLayout(false);
             this.gbROMs.PerformLayout();
             this.gbPaths.ResumeLayout(false);
             this.gbPaths.PerformLayout();
             this.tabHelp.ResumeLayout(false);
             this.tabLicense.ResumeLayout(false);
-            this.gbSystem.ResumeLayout(false);
-            this.gbSystem.PerformLayout();
+            this.gbOptionsInfo.ResumeLayout(false);
+            this.gbOptionsInfo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -660,6 +678,8 @@
         private System.Windows.Forms.Label lblLanguage;
         private System.Windows.Forms.ComboBox cbLogLevel;
         private System.Windows.Forms.ComboBox cbLanguage;
+        private System.Windows.Forms.GroupBox gbOptionsInfo;
+        private System.Windows.Forms.Label lblOptionsInfo1;
     }
 }
 

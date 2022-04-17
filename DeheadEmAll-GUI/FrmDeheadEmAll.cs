@@ -579,6 +579,10 @@ namespace DeheadEmAll_GUI
             chkFDS.Enabled = true;
             chkLynx.Enabled = true;
             chkNES.Enabled = true;
+
+            // Disable all Options comboboxes.
+            cbLanguage.Enabled = true;
+            cbLogLevel.Enabled = true;
         }
 
         /// <summary>
@@ -609,6 +613,10 @@ namespace DeheadEmAll_GUI
             chkFDS.Enabled = false;
             chkLynx.Enabled = false;
             chkNES.Enabled = false;
+
+            // Disable all Options comboboxes.
+            cbLanguage.Enabled = false;
+            cbLogLevel.Enabled = false;
         }
 
         /// <summary>
