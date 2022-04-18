@@ -29,7 +29,6 @@ DeheadEmAll.DeheadEmAll dhea = new DeheadEmAll.DeheadEmAll();
 		<tags>DeheadEmAll Deheader ROMs Automated ROM Deheaderer Dehead WindowsForms WinForms Windows Forms Application Console</tags>
 		<repository type="git" url="https://github.com/TwistedTommy/DeheadEmAll.git" />
 		<dependencies>
-			<dependency id="ILMerge" version="3.0.41" />
 			<dependency id="Serilog" version="2.10.0" />
 			<dependency id="Serilog.Sinks.Console" version="4.0.1" />
 			<dependency id="Serilog.Sinks.LogEmAll" version="0.0.3" />
